@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://ce04nbmg1qx6"]
+
+[ext_resource type="Texture2D" uid="uid://de8m0sk3cfmbx" path="res://assets/sprites/Enemies/Frownie1.png" id="1_fj6v7"]
+[ext_resource type="Script" path="res://src/enemies/Frownie.cs" id="1_v3v0b"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_it3u8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fj6v7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lgjl7"]
+radius = 26.9867
+height = 63.9684
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_42orv"]
+bg_color = Color(0.13, 0.13, 0.13, 0.4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_inad3"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l2cfw"]
+size = Vector2(64, 58)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 3
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_v3v0b")
+Speed = 300
+Acceleration = 5
+
+[node name="NavTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(7.10543e-15, 0)
+sprite_frames = SubResource("SpriteFrames_it3u8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.90735e-06)
+rotation = -1.60221
+shape = SubResource("CapsuleShape2D_lgjl7")
+
+[node name="Healthbar" type="ProgressBar" parent="."]
+offset_left = -31.0
+offset_top = -32.0
+offset_right = -18.0
+offset_bottom = 28.0
+rotation = -1.5708
+theme_override_styles/background = SubResource("StyleBoxFlat_42orv")
+theme_override_styles/fill = SubResource("StyleBoxFlat_inad3")
+step = 1.0
+fill_mode = 2
+show_percentage = false
+
+[node name="Hurtbox" type="Area2D" parent="."]
+
+[node name="HurtboxShape" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_l2cfw")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

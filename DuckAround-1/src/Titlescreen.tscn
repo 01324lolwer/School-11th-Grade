@@ -1,0 +1,101 @@
+[gd_scene load_steps=6 format=3 uid="uid://dnf34vu1ri2xj"]
+
+[ext_resource type="Script" path="res://src/Titlescreen.cs" id="1_ho7xl"]
+[ext_resource type="FontFile" uid="uid://dqsa26dgokpr7" path="res://fonts/m5x7.ttf" id="1_ytqci"]
+[ext_resource type="PackedScene" uid="uid://cfcf4uk33dsrt" path="res://src/World.tscn" id="2_2vcb6"]
+[ext_resource type="Texture2D" uid="uid://dkjndquagjwes" path="res://assets/Titlescreen.png" id="3_bstrj"]
+[ext_resource type="AudioStream" uid="uid://dpvw6iofy7r80" path="res://sounds/music/TitleTheme.wav" id="5_6o8xd"]
+
+[node name="Titlescreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ho7xl")
+World = ExtResource("2_2vcb6")
+metadata/_edit_lock_ = true
+
+[node name="Titlescreen" type="Sprite2D" parent="."]
+position = Vector2(320, 180)
+texture = ExtResource("3_bstrj")
+metadata/_edit_lock_ = true
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = 75.0
+offset_right = 99.0
+offset_bottom = 136.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_ytqci")
+theme_override_font_sizes/font_size = 48
+text = "Start"
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -249.0
+offset_top = -12.0
+offset_right = 271.0
+offset_bottom = 90.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ytqci")
+theme_override_font_sizes/font_size = 128
+text = "DUCK AROUND"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_6o8xd")
+autoplay = true
+
+[node name="Steuerung" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="Steuerung"]
+offset_left = 426.0
+offset_top = 109.0
+offset_right = 620.0
+offset_bottom = 164.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ytqci")
+theme_override_font_sizes/font_size = 32
+text = "WASD / Arrowkeys
+Walk"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Steuerung"]
+offset_left = 410.0
+offset_top = 177.0
+offset_right = 636.0
+offset_bottom = 232.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ytqci")
+theme_override_font_sizes/font_size = 32
+text = "Left Mousebutton / C
+Attack"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Steuerung"]
+offset_left = 418.0
+offset_top = 247.0
+offset_right = 628.0
+offset_bottom = 331.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ytqci")
+theme_override_font_sizes/font_size = 32
+text = "F11 / O
+Windowed -> Full
+Full -> Windowed"
+horizontal_alignment = 1

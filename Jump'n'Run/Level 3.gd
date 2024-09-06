@@ -7,4 +7,5 @@ func _on_Ziel_body_entered(body):
 
 ##Neuladen wegen "Tod"
 func _on_Void_body_entered(body):
-	get_tree().reload_current_scene()
+	if body is Player:
+		get_tree().reload_current_scene()

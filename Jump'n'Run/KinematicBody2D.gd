@@ -15,7 +15,7 @@ var velocity = Vector2.ZERO
 ##Physik des Spielers
 func _physics_process(delta):
 	if Input.is_action_pressed("left"):
-		velocity.x = -speed
+		velocity.x = (-speed)
 		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.play("walk")
 	elif Input.is_action_pressed("right"):
@@ -30,8 +30,3 @@ func _physics_process(delta):
 
 	velocity.y += gravity
 	velocity = move_and_slide(velocity, Vector2.UP)
-
-##Drücken von "ESC" bringt zum Menü
-func _input(event):
-	if Input.is_action_just_pressed("Menu"):
-		get_tree().change_scene("res://MainMenu.tscn")

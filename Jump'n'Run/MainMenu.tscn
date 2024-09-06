@@ -43,10 +43,23 @@ size_flags_vertical = 3
 custom_constants/separation = 30
 alignment = 1
 
-[node name="Spielen" type="TextureRect" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 154.0
+[node name="Level" type="TextureRect" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 139.0
 margin_right = 537.0
-margin_bottom = 190.0
+margin_bottom = 139.0
+stretch_mode = 3
+
+[node name="Levels" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer/Level"]
+margin_left = -2.85714
+margin_top = -38.1429
+margin_right = 146.143
+margin_bottom = 3.85715
+text = "Level Wahl"
+
+[node name="Spielen" type="TextureRect" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 169.0
+margin_right = 537.0
+margin_bottom = 205.0
 texture = ExtResource( 2 )
 stretch_mode = 3
 
@@ -56,12 +69,12 @@ margin_top = 1.0
 margin_right = 146.0
 margin_bottom = 43.0
 action_mode = 0
-text = "Spielen"
+text = "Tutorial"
 
 [node name="Schließen" type="TextureRect" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 220.0
+margin_top = 235.0
 margin_right = 537.0
-margin_bottom = 266.0
+margin_bottom = 281.0
 texture = ExtResource( 4 )
 stretch_mode = 3
 
@@ -95,5 +108,6 @@ margin_bottom = 473.0
 texture = ExtResource( 6 )
 stretch_mode = 3
 
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/Level/Levels" to="." method="_on_Levels_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/Spielen/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/Schließen/Button2" to="." method="_on_Button2_pressed"]
