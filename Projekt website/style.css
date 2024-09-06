@@ -1,0 +1,74 @@
+html {
+  background-color: #F2F2F2;
+}
+
+body {
+  margin:0;
+  padding: 0;
+}
+
+/* Selection Bar einstellungen Oben */
+
+.topnav {
+  background-color: #333333;
+  overflow: hidden;
+}
+
+.topnav a {
+  float: left;
+  color: #ffffff;
+  text-align: left;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ffffff;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #29ABE2;
+  color: white;
+}
+
+/* Selection Bar einstellungen Unten */
+
+.botnav {
+  background-color: #333333;
+  overflow: hidden;
+}
+
+.botnav a {
+  margin-left: 45%;
+  float: left;
+  color: #ffffff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.botnav a:hover {
+  background-color: #ffffff;
+  color: black;
+}
+
+.botnav a.active {
+  background-color: #29ABE2;
+  color: white;
+}
+
+/* Bild Einstellungen */
+.bild {
+  width: 100%;
+  height: auto;
+}
+
+
+.content {
+  padding: 20px;
+  background: #fff;
+  margin-bottom: 20px;
+}
